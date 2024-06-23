@@ -8,3 +8,5 @@ ansible-playbook playbook.yml
 
 # make sure you have added host information in inventory file
 default location for inventory file is /etc/ansible/hosts
+
+Although there is always an option to make a custom inventory file
