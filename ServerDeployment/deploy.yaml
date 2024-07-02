@@ -1,0 +1,5 @@
+name: Deploy web and DB server
+hosts: AllServers
+roles:
+  - deploy-apache
+  - deploy-devopsPackages

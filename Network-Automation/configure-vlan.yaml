@@ -1,0 +1,14 @@
+---
+- name: Configure VLANs on Cisco switch
+  hosts: cisco_switches
+  gather_facts: no
+  connection: network_cli
+
+  tasks:
+    - name: Ensure VLAN 100 exists with name 'WEB'
+      cisco.ios.ios_vlans:
+        config:
+          - vlan_id: 100
+            name: WEB
+            state: active
+        state: merged

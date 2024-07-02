@@ -1,0 +1,19 @@
+- name: Install a list of packages
+  apt:
+    pkg:
+    - tree
+    - git
+    - docker.io
+
+- name: Install the version '1.00' of package "foo"
+  apt:
+    name: foo=1.00
+
+- name: Upgrade all packages to the latest version
+  apt:
+    name: "*"
+    state: latest
+
+- name: Update all packages
+  apt:
+    update_cache: yes

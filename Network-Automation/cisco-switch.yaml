@@ -1,0 +1,10 @@
+---
+- name: Update switch configuration
+  hosts: switches
+  gather_facts: false
+
+  tasks:
+    - name: Set hostname
+      cisco.ios.ios_config:
+        lines:
+          - hostname Switch-200

@@ -1,0 +1,8 @@
+name: Automate cisco tasks
+hosts: Cisco-Servers
+tasks:
+ - name: Backup current switch config (ios)
+   ios_config:
+     backup: yes
+   register: backup_ios_location
+   when: ansible_network_os == 'ios'
