@@ -1,0 +1,11 @@
+---
+- name: Deploy web app and DB using Ansible
+  host: all
+  become: yes
+  connection: ssh
+  gather_facts: yes
+  roles:
+  - deploy-awsinfra
+  - install-python-dependencies
+  - deploy-webapp
+  - deploy-db
