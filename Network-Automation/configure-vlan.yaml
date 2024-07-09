@@ -5,10 +5,10 @@
   connection: network_cli
 
   tasks:
-    - name: Ensure VLAN 100 exists with name 'WEB'
+    - name: Ensure VLAN 100 exists with name 'Web'
       cisco.ios.ios_vlans:
         config:
           - vlan_id: 100
-            name: WEB
+            name: Web
             state: active
         state: merged

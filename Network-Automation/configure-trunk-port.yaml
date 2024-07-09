@@ -1,0 +1,16 @@
+---
+- name: Configure trunk ports
+  hosts: cisco_switches
+  gather_facts: no
+  connection: network_cli
+
+  tasks:
+    - name: Configure Ethernet1/0 as a trunk port
+      cisco.ios.ios_l2_interfaces:
+        config:
+          - name: Ethernet1/0
+            trunk:
+              allowed_vlans: '10,20,30'
+              native_vlan: 1
+              trunk_allowed_vlans: '10,20,30'
+        state: replaced
